@@ -6,5 +6,5 @@ interface Props {
 }
 
 export const Home = (props: Props) => {
-    return  <div className={style.Home}>Home</div>;
+    return  <div className={style.Home}></div>;
 };

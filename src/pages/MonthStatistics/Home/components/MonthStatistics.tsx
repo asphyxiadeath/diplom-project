@@ -1,4 +1,4 @@
-import ts from "typescript";
+import React from 'react';
 
 import styles from './MonthStatistics.module.scss';
 

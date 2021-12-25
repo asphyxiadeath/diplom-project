@@ -5,16 +5,25 @@ import { Route, Routes} from 'react-router-dom';
 import { Home } from './pages/Home/components/Home';
 import { MonthStatistics } from './pages/MonthStatistics/Home/components/MonthStatistics';
 import { Header } from './shared/Header/Header';
+import { Popup } from './shared/Header/Popup/Popup';
+
+
 
 
 function App() {
-  return <div className="container">
-    <Header />
-    <Routes>
-    <Route path= "/"  element= {<Home/>}/>
-    <Route path= "/month-statistics" element= {<MonthStatistics/>}/>
-    </Routes>
+  return (
+    <div className="global-container"> 
+      <Popup /> 
+    <div className="container">
+      <Header />
+      <Routes>
+        <Route path= "/"  element= {<Home/>}/>
+        <Route path= "/month-statistics" element= {<MonthStatistics/>}/>
+      </Routes>
+    </div>
   </div>
+);
 }
+
 
 export default App;

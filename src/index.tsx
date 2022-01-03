@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
 import './styles/index.scss';
+import {createBrowserHistory} from 'history'
 
-//unlucky routing//
+const history = createBrowserHistory()
 ReactDOM.render(
   <React.StrictMode>
    <Router>
@@ -13,4 +14,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
 

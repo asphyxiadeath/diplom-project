@@ -4,9 +4,11 @@ import { ThisDay } from './ThisDay/ThisDay';
 import {ThisDayInfo} from './ThisDayInfo/ThisDayInfo';
 import {Days} from './Days/Days';
 
+
 interface Props {
 
 }
+
 
 export const Home = (props: Props) => {
     return (
@@ -14,6 +16,7 @@ export const Home = (props: Props) => {
         <div className={style.wrapper}>
         <ThisDay />
         <ThisDayInfo />
+        
         </div>
         <Days />
     </div>

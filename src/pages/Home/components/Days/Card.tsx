@@ -8,7 +8,7 @@ import { ThisDayItem } from '../ThisDayInfo/ThisDayItem';
 import {Popup} from '../../../../shared/Header/Popup/Popup'
 import { Link } from "react-router-dom"
 import news from '../../../../assets/Images/news.png'
-
+import { Tooltip } from '@varld/popover';
 import { Value } from "sass";
 
 
@@ -38,15 +38,20 @@ interface Props {
   ]
       return (
       <div className={style.card} >
-        
+       
+        <Tooltip  content="Больше информации"  >
           {links.map((value:{textId:string,href:string}) => (
              
             <Link className="Popup" to={value.href}>
+           
+            
             <img className={style.news_img} src={news} alt="новости" />
+    
             </Link>
             
             
           ))}
+            </Tooltip>
            
         <div className={style.day}>{day.day} 
         </div>
@@ -66,7 +71,7 @@ interface Props {
   
 
     
- 
+    
         
 
   

@@ -38,23 +38,19 @@ interface Props {
   ]
       return (
       <div className={style.card} >
-       
-        <Tooltip  content="Больше информации"  >
-          {links.map((value:{textId:string,href:string}) => (
-             
-            <Link className="Popup" to={value.href}>
-           
-            
-            <img className={style.news_img} src={news} alt="новости" />
-    
-            </Link>
-            
-            
-          ))}
-            </Tooltip>
-           
-        <div className={style.day}>{day.day} 
-        </div>
+        <div className={style.contaiter_header}>
+          <div className={style.day}>{day.day} </div>
+              <div className={style.news}>
+              {links.map((value:{textId:string,href:string}) => (
+                <Link className="Popup" to={value.href}>
+                  <Tooltip  content="Больше информации"  >
+                    <img src={news} alt="новости" />
+                    </Tooltip>
+                 </Link>
+                 
+                ))}
+                </div>
+                </div>
         <div className={style.day_info}>{day.day_info}</div>
         <div className={style.img}>
           <GlobalSvgSelector id={day.icon_id} />

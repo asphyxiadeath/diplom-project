@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 
 //unlucky routing
 import { Route, Routes} from 'react-router-dom';
@@ -10,13 +10,14 @@ import {Popup} from './shared/Header/Popup/Popup'
 
 
 
-
 function App() {
   
   return (
+    
     <div className="global-container">  
     <div className="container">
       <Header />
+      
       <Routes>
         <Route path= "/"  element= {<Home/>}/>
         <Route path= "/month-statistics" element= {<MonthStatistics/>}/>

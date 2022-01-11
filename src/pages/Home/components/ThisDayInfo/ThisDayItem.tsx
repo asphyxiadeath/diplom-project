@@ -2,14 +2,14 @@ import React from 'react';
 import { Item } from './ThisDayInfo';
 import style from './ThisDayInfo.module.scss';
 import { IndicatorSvgSelector } from '../../../../assets/Images/icons/indicators/IndicatorSvgSelector';
-
+import { Weather } from '../../../../store/types/types';
 
 interface Props {
-    item: Item;
-  }
+  items: Item;
+}
   
-  export const ThisDayItem = ({ item }: Props) => {
-    const { icon_id, name, value } = item;
+  export const ThisDayItem = ({ items }: Props) => {
+    const { icon_id, name, value } = items;
     return (
       <div className={style.item}>
         <div className={style.indicator}>

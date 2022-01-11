@@ -5,16 +5,21 @@ import App from './App';
 import './styles/index.scss';
 import {createBrowserHistory} from 'history'
 import { ThemeProvider } from './Provider/ThemeProvider';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
+
 
 const history = createBrowserHistory()
 ReactDOM.render(
-  <React.StrictMode>
-   <Router>
-  <ThemeProvider>
-   <App />
-   </ThemeProvider>
-   </Router> 
-  </React.StrictMode>,
+    <React.StrictMode>
+        <Provider store={store}>
+        <Router>
+          <ThemeProvider>
+          <App />
+          </ThemeProvider>
+        </Router> 
+      </Provider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

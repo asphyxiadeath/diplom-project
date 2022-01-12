@@ -29,7 +29,7 @@ export const Home = (props: Props) => {
         {/**<SpinnerInfinity />**/}
         <div className={style.wrapper}>
         <ThisDay weather={weather}/>
-        <ThisDayInfo  />
+        <ThisDayInfo weather={weather} />
         
         </div>
         <Days />

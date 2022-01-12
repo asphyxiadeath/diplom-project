@@ -9,7 +9,7 @@ interface Props {
 }
   
   export const ThisDayItem = ({ items }: Props) => {
-    const { icon_id, name, value } = items;
+    const { icon_id, name,  value } = items;
     return (
       <div className={style.item}>
         <div className={style.indicator}>

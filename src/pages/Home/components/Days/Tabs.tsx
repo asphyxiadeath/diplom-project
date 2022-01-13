@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from './Card';
+import { Days } from './Days';
 
 import style from './Days.module.scss';
 
-interface Props {}
-
+interface Props {
+ 
+}
 
 export const Tabs = (props: Props) => {
   const tabs = [
@@ -18,6 +20,9 @@ export const Tabs = (props: Props) => {
       value: 'На месяц',
     },
   ];
+
+  
+  
   return (
     <div className={style.tabs}>
       <div className={style.tabs_wrapper}>
@@ -28,6 +33,9 @@ export const Tabs = (props: Props) => {
         ))}
       </div>
       <div className={style.cancel}>Отменить</div>
-    </div>
-  );
-};
+       </div>    
+  )
+}
+
+
+

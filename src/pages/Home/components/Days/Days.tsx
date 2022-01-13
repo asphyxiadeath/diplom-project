@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from "react";
 
 import { Card } from './Card';
 
 import style from './Days.module.scss';
 import { Tabs } from './Tabs';
 
-interface Props {}
+interface Props { }
+
+
 
 export interface Day {
   day: string;
@@ -75,15 +77,21 @@ export const Days = (props: Props) => {
       info: 'Облачно',
     },
   ];
+
+
+  const [showCard, setShowCard] = useState(false);
+
   return (
     <>
       <Tabs />
-      <div className={style.days}>
+      <div className={style.days} onClick={() => setShowCard(true)}>
         {days.map((day: Day) => (
           <Card day={day} key={day.day} />
         ))}
       </div>
+
     </>
-  );
+  )
 };
+
 

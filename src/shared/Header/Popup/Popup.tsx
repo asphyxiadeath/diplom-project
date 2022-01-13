@@ -62,13 +62,11 @@ export const Popup = ({}: Props) => {
           </div>
         </div>
         <div className={style.this_day_info_items}>
-          {items.map((item: Item) => (
+          {items.map((item: any) => (
             <ThisDayItem key={item.icon_id} items={item} />
           ))}
         </div>
-        <div className={style.close}>
-          <GlobalSvgSelector id="close" />
-        </div>
+        
       </div>
       </div> 
        </>

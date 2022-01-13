@@ -11,37 +11,42 @@ export interface Item {
     icon_id: string;
     name: string;
     value: any;
+    degrees: Item;
   }
   
 
-export const ThisDayInfo = ({ weather }: Props) => {
+export const ThisDayInfo = ({ weather}: Props) => {
     const items = [
         {
           icon_id: 'temp',
           name: 'Температура ощущается как',
           value:  Math.floor(weather.main.feels_like), 
+          degrees: "°",
         },
         {
           icon_id: 'pressure',
           name: 'Давление',
-          value: '765 мм ртутного столба - нормальное',
+          value: weather.main.pressure,
+          degrees: "мм.рт.ст"
         },
         {
           icon_id: 'precipitation',
-          name: 'Осадки',
-          value: 'Без осадков',
+          name: 'Влажность',
+          value: weather.main.humidity,
+          degrees: "%",
         },
         {
           icon_id: 'wind',
           name: 'Ветер',
-          value: '3 м/с юго-запад - легкий ветер',
+          value: weather.wind.speed,
+          degrees: "м/с"
         },
       ];
     
     return (
     <div className={style.this_day_info}>
         <div className={style.this_day_info_items}>
-            {items.map((item: Item) => (
+            {items.map((item: any) => (
                 <ThisDayItem key={item.icon_id} items={item} />
         ))}
         </div>

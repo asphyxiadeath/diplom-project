@@ -18,20 +18,10 @@ interface Props {
     
   }
 
-
-  /**const links = [
-    {
-        textId: "card.links.popup",
-        href: "/popup"
-        
-    },
-    
-];**/
-
  export const Card = ({ day }: Props) => {
   const links = [
     {
-        textId: "card.links.popup",
+        
         href: "/popup"
         
     },
@@ -41,7 +31,7 @@ interface Props {
         <div className={style.contaiter_header}>
           <div className={style.day}>{day.day} </div>
               <div className={style.news}>
-              {links.map((value:{textId:string,href:string}) => (
+              {links.map((value:{href:string}) => (
                 <Link className="Popup" to={value.href}>
                   <Tooltip  content="Больше информации"  >
                     <img src={news} alt="новости" />

@@ -4,6 +4,7 @@ import style from './Header.module.scss';
 import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
 import { Theme } from '../../context/ThemeContext';
+import { Link } from "react-router-dom";
 
 
 interface Props {}
@@ -37,12 +38,24 @@ export const Header = (props: Props) => {
     theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
   }
 
+  const links = [
+    {
+        
+        href: "/"
+        
+    },
+  ]
   return (
     <header className={style.header}>
       <div className={style.wrapper}>
         <div className={style.logo}>
+        {links.map((value:{href:string}) => (
+            <Link className="Home" to={value.href}>
           <GlobalSvgSelector id="header-logo" />
+          </Link>
+        ))},
         </div>
+
         <div className={style.title}>React weather</div>
       </div>
       <div className={style.wrapper}>

@@ -1,90 +1,90 @@
 import React, { useState } from "react";
 
 import { Card } from './Card';
-
 import style from './Days.module.scss';
 import { Tabs } from './Tabs';
+import { Weather } from '../../../../store/types/types';
 
-interface Props { }
+interface Props {weather: Weather; }
 
 
 
 export interface Day {
   day: string;
-  day_info: string;
+  day_info: any;
   icon_id: string;
-  temp_day: string;
-  temp_night: string;
+  temp_day: any;
+  temp_now: any;
   info: string;
 }
 
-export const Days = (props: Props) => {
+export const Days = ({ weather}: Props) => {
   const days: Day[] = [
     {
-      day: 'Сегодня',
-      day_info: '28 авг',
+      day: "Сегодня",
+      day_info: "17 янв",
       icon_id: 'sun',
-      temp_day: '+18',
-      temp_night: '+15',
-      info: 'Облачно',
+      temp_day: Math.floor(weather.main.temp),
+      temp_now: weather.main.feels_like,
+      info: 'Ясно',
     },
     {
       day: 'Завтра',
-      day_info: '29 авг',
+      day_info: '18 янв',
       icon_id: 'small_rain_sun',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'небольшой дождь и солнце',
     },
     {
       day: 'Ср',
-      day_info: '30 авг',
+      day_info: '19 янв',
       icon_id: 'small_rain',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'небольшой дождь',
     },
     {
       day: 'Чт',
-      day_info: '28 авг',
+      day_info: '20 янв',
       icon_id: 'mainly_cloudy',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'Облачно',
     },
     {
       day: 'Пт',
-      day_info: '28 авг',
+      day_info: '21 янв',
       icon_id: 'rain',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'Облачно',
     },
     {
       day: 'Сб',
-      day_info: '28 авг',
+      day_info: '22 янв',
       icon_id: 'sun',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'Облачно',
     },
     {
       day: 'Вс',
-      day_info: '28 авг',
+      day_info: '23 янв',
       icon_id: 'sun',
       temp_day: '+18',
-      temp_night: '+15',
+      temp_now: '+15',
       info: 'Облачно',
     },
   ];
 
 
-  const [showCard, setShowCard] = useState(false);
+  
 
   return (
     <>
       <Tabs />
-      <div className={style.days} onClick={() => setShowCard(true)}>
+      <div className={style.days} >
         {days.map((day: Day) => (
           <Card day={day} key={day.day} />
         ))}

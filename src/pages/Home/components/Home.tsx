@@ -32,7 +32,7 @@ export const Home = (props: Props) => {
         <ThisDayInfo weather={weather} />
         
         </div>
-        <Days />
+        <Days weather={weather} />
     </div>
     );
 };

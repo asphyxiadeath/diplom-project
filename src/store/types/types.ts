@@ -6,6 +6,7 @@ export type Weather = {
       feels_like:any;
       pressure: any;
       humidity: number;
+      dt: any;
     };
     wind : {
       speed: any;

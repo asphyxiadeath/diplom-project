@@ -21,6 +21,7 @@ const initialState: CurrentWeather = {
       feels_like: 0,
       pressure: 0,
       humidity: 0,
+      dt: 1560350645,
     },
     wind: {
       speed: 0,

@@ -6,36 +6,40 @@ import { GlobalSvgSelector } from '../../../assets/Images/icons/global/GlobalSvg
 import { Item } from '../../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import { ThisDayItem } from '../../../pages/Home/components/ThisDayInfo/ThisDayItem';
 import style from './Popup.module.scss';
-import trees from './img/trees.jpg'
+import trees from './img/trees.jpg';
+import { Weather } from '../../../store/types/types';
+import Clock from 'react-live-clock';
 
 
 
 
-interface Props {
-  
+interface Props {weather: Weather;
 }
 
-export const Popup = ({}: Props) => {
+export const Popup = ({ weather}: Props) => {
   const items = [
     {
       icon_id: 'temp',
-      name: 'Температура',
-      value: '20° - ощущается как 17°',
+      name: 'Температура ощущаеться как ',
+      value: Math.floor(weather.main.feels_like),
     },
     {
       icon_id: 'pressure',
       name: 'Давление',
-      value: '765 мм ртутного столба - нормальное',
+      value:  weather.main.pressure,
+      degrees: "мм.рт.ст"
     },
     {
       icon_id: 'precipitation',
-      name: 'Осадки',
-      value: 'Без осадков',
+      name: 'Влажность',
+      value:  weather.main.humidity,
+      degrees: "%",
     },
     {
       icon_id: 'wind',
       name: 'Ветер',
-      value: '3 м/с юго-запад - легкий ветер',
+      value:  weather.wind.speed,
+      degrees: "м/с"
     },
   
   ];
@@ -49,13 +53,13 @@ export const Popup = ({}: Props) => {
     <img className={style.background_img} src={trees} alt="forest" />
       <div className={style.popup}>
         <div className={style.day}>
-          <div className={style.day_temp}>20°</div>
-          <div className={style.day_name}>Среда</div>
+          <div className={style.day_temp}>{Math.floor(weather.main.temp)}°</div>
+          <div className={style.day_name}>Понедельник</div>
           <div className={style.img}>
             <GlobalSvgSelector id="sun" />
           </div>
           <div className={style.day_time}>
-            Время: <span>21:54</span>
+            Время: <Clock format="HH:mm:ss" interval={1000} ticking={true}  />
           </div>
           <div className={style.day_city}>
             Город: <span>Минск</span>

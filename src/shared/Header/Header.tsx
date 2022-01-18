@@ -5,18 +5,28 @@ import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
 import { Theme } from '../../context/ThemeContext';
 import { Link } from "react-router-dom";
+import { Weather } from '../../store/types/types';
+import { fetchCurrentWeather } from '../../store/thunks/fetchCurrentWeather';
 
 
-interface Props {}
 
-export const Header = (props: Props) => {
+
+
+interface Props {weather: Weather; }
+
+
+
+export const Header = ({ weather}: Props) => {
   const theme = useTheme();
   const options = [
-    { value: 'city-1', label: 'Минск' },
-    { value: 'city-2', label: 'Урюпинск' },
-    { value: 'city-3', label: 'Чебоксары' },
+    { value: fetchCurrentWeather('minsk'), label: 'Минск', },
+    { value: fetchCurrentWeather('Uryupinsk'), label: 'Урюпинск', },
+    { value:  fetchCurrentWeather('Cheboksary'), label: 'Чебоксары' },
+  
   ];
 
+  
+  
   const colourStyles = {
     control: (styles: any) => ({
       ...styles,
@@ -45,15 +55,20 @@ export const Header = (props: Props) => {
         
     },
   ]
+
+  
+  
+  
   return (
+    
     <header className={style.header}>
       <div className={style.wrapper}>
         <div className={style.logo}>
-        {links.map((value:{href:string}) => (
+          {links.map((value: { href: string; }) => (
             <Link className="Home" to={value.href}>
-          <GlobalSvgSelector id="header-logo" />
-          </Link>
-        ))},
+              <GlobalSvgSelector id="header-logo" />
+            </Link>
+          ))},
         </div>
 
         <div className={style.title}>React weather</div>
@@ -63,11 +78,21 @@ export const Header = (props: Props) => {
           <GlobalSvgSelector id="change-theme" />
         </div>
         <Select
-          defaultValue={options[0]}
+          defaultValue={options}
           styles={colourStyles}
           options={options}
-        />
+          onChange={options} 
+           />
       </div>
     </header>
   );
 };
+
+
+
+
+
+
+
+
+

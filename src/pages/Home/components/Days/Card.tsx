@@ -32,7 +32,7 @@ interface Props {
           <div className={style.day}>{day.day} </div>
               <div className={style.news}>
               {links.map((value:{href:string}) => (
-                <Link className="Popup" to={value.href}>
+               <Link className="Popup" to={value.href}> 
                   <Tooltip  content="Больше информации"  >
                     <img src={news} alt="новости" />
                     </Tooltip>

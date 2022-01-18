@@ -16,7 +16,13 @@ export interface Day {
   temp_day: any;
   temp_now: any;
   info: string;
+
 }
+
+export interface Tabs{
+ 
+}
+
 
 export const Days = ({ weather}: Props) => {
   const days: Day[] = [
@@ -29,7 +35,7 @@ export const Days = ({ weather}: Props) => {
       info: 'Ясно',
     },
     {
-      day: 'Завтра',
+      day: "Вторник",
       day_info: '18 янв',
       icon_id: 'small_rain_sun',
       temp_day: '+18',
@@ -83,7 +89,7 @@ export const Days = ({ weather}: Props) => {
 
   return (
     <>
-      <Tabs />
+      <Tabs  />
       <div className={style.days} >
         {days.map((day: Day) => (
           <Card day={day} key={day.day} />

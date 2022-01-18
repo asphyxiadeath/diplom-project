@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction,  } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 import { Weather } from '../../../store/types/types';
 
@@ -53,6 +53,7 @@ export const currentWeatherSlice = createSlice({
         message: action.payload.statusText,
       };
     },
+
     fetchCurrentWeatherError(
       state,
       action: PayloadAction<AxiosResponse<Weather>>
@@ -65,5 +66,7 @@ export const currentWeatherSlice = createSlice({
     },
   },
 });
+
+
 
 export default currentWeatherSlice.reducer;

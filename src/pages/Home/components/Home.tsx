@@ -20,8 +20,13 @@ export const Home = (props: Props) => {
   
     useEffect(() => {
       dispatch(fetchCurrentWeather('minsk'));
+      
     }, []);
-    
+   
+    useEffect(() => {
+    dispatch(fetchCurrentWeather('Uryupinsk'));
+   }, []);
+
     return (
         
     <div className={style.Home}>

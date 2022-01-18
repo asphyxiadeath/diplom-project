@@ -8,7 +8,7 @@ import { Header } from './shared/Header/Header';
 import {Popup} from './shared/Header/Popup/Popup'
 import { Weather } from './store/types/types';
 import {  useCustomSelector } from './hooks/store';
-
+import Snake from './shared/Header/snake'
 import { selectCurrentWeatherData } from './services/selectors';
 
 
@@ -21,11 +21,11 @@ function App() {
     
     <div className="global-container">  
     <div className="container">
-      <Header />
+      <Header weather={weather}/>
       
       <Routes>
         <Route path= "/"  element= {<Home/>}/>
-        <Route path= "/month-statistics" element= {<MonthStatistics/>}/>
+        <Route path= "/game" element= {<Snake/>}/>
         <Route path= "/popup" element={<Popup weather={weather}/>}/>
         
       </Routes>

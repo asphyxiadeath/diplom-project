@@ -50,8 +50,11 @@ export const currentWeatherSlice = createSlice({
       state.response = {
         status: action.payload.status,
         message: action.payload.statusText,
-      };
-    },
+      }
+    
+    
+    
+  },
     fetchCurrentWeatherError(
       state,
       action: PayloadAction<AxiosResponse<Weather>>

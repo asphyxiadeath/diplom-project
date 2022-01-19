@@ -6,7 +6,7 @@ const api = axios.create({
 
 api.interceptors.request.use(config => {
   config.url =
-    config.url + '&units=metric'+'&cnt=7' + '&appid=' + process.env.REACT_APP_API_KEY;
+    config.url + 'onecall?'+'&lat=53.893009'+'&lon=27.567444'+'&exclude=minutely,hourly'+'&units=metric' + '&appid=' + process.env.REACT_APP_API_KEY;
   return config;
 });
 

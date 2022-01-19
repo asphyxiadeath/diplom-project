@@ -1,96 +1,103 @@
 export type Weather = {
-  "message": any,
-  "cnt": any,
-  'list':[{
-    'dt': any,
-    
-    
-   'pressure':number;
-    'humidity': number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
+  'daily':[{
+     'temp':{
+       'day':number;
+       'night':number;
+     }
+     'feels_like':{
       'day':number;
+      'night':number;
     }
-   
-  'speed':number; 
+    "pressure": number,
+     "humidity": number,
+     "wind_speed": number,
   },
   {
-    'dt': any,
-    
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
+    'temp':{
       'day':number;
+      'night':number;
     }
-  'speed':number; 
-  },
-  {
-    'dt': any,
+    'feels_like':{
+     'day':number;
+     'night':number;
+   }
+   "pressure": number,
+    "humidity": number,
+    "wind_speed": number,
+ },
     
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
-      'day':number;
-    }
-  'speed':number; 
-  },{
-    'dt': any,
+ {
+  'temp':{
+    'day':number;
+    'night':number;
+  }
+  'feels_like':{
+   'day':number;
+   'night':number;
+ }
+ "pressure": number,
+  "humidity": number,
+  "wind_speed": number,
+},
+
+{
+  'temp':{
+    'day':number;
+    'night':number;
+  }
+  'feels_like':{
+   'day':number;
+   'night':number;
+ }
+ "pressure": number,
+  "humidity": number,
+  "wind_speed": number,
+},
+
+{
+  'temp':{
+    'day':number;
+    'night':number;
+  }
+  'feels_like':{
+   'day':number;
+   'night':number;
+ }
+ "pressure": number,
+  "humidity": number,
+  "wind_speed": number,
+},
+{
+  'temp':{
+    'day':number;
+    'night':number;
+  }
+  'feels_like':{
+   'day':number;
+   'night':number;
+ }
+ "pressure": number,
+  "humidity": number,
+  "wind_speed": number,
+},
+
+{
+  'temp':{
+    'day':number;
+    'night':number;
+  }
+  'feels_like':{
+   'day':number;
+   'night':number;
+ }
+ "pressure": number,
+  "humidity": number,
+  "wind_speed": number,
+},
     
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
-      'day':number;
-    }
-  'speed':number; 
-  },{
-    'dt': any,
     
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
-      'day':number;
-    }
-  'speed':number; 
-  },{
-    'dt': any,
     
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
-      'day':number;
-    }
-  'speed':number; 
-  },{
-    'dt': any,
-    
-   'pressure':number;
-    'humidity':number;
-    'temp': {
-        'day': number;
-    }
-    'feels_like': {
-      'day':number;
-    }
-  'speed':number; 
-  },
-]  
+  ]
   };
   
   

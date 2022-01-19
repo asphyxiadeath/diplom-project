@@ -9,7 +9,7 @@ import {Popup} from '../../../../shared/Header/Popup/Popup'
 import { Link } from "react-router-dom"
 import news from '../../../../assets/Images/news.png'
 import { Tooltip } from '@varld/popover';
-import { Value } from "sass";
+
 
 
 
@@ -41,12 +41,12 @@ interface Props {
                 ))}
                 </div>
                 </div>
-        <div className={style.day_info}>{day.day_info}</div>
+        
         <div className={style.img}>
           <GlobalSvgSelector id={day.icon_id} />
         </div>
         <div className={style.temp_day}>{day.temp_day}</div>
-        <div className={style.temp_night}>{day.temp_day}</div>
+        <div className={style.temp_night}>{day.temp_night}</div>
         <div className={style.info}>{day.info}</div>
         <div className={style.blur}></div>
         </div>

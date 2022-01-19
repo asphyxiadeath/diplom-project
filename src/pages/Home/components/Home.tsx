@@ -19,7 +19,7 @@ export const Home = (props: Props) => {
     const { weather } = useCustomSelector(selectCurrentWeatherData);
   
     useEffect(() => {
-      dispatch(fetchCurrentWeather('minsk'));
+      dispatch(fetchCurrentWeather('&lat=53.893009'+'&lon=-27.56'));
       
     }, []);
    

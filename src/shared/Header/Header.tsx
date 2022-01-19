@@ -22,7 +22,7 @@ export const Header = ({ weather}: Props) => {
   const dispatch= useDispatch();
   const options = [
     { value: 'minsk', label: 'Минск', },
-    { value: 'Uryupinsk', label: 'Урюпинск', },
+    { value: '&lat=53.893009'+'&lon=27.567444', label: 'Урюпинск', },
     { value:  'Cheboksary', label: 'Чебоксары' },
   
   ];
@@ -60,7 +60,7 @@ export const Header = ({ weather}: Props) => {
 
   const onSelectCity=(event:any): void =>{
     dispatch(fetchCurrentWeather(event.value));
-
+    
   }
   
   

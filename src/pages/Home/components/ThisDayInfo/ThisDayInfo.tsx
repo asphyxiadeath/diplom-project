@@ -20,25 +20,25 @@ export const ThisDayInfo = ({ weather}: Props) => {
         {
           icon_id: 'temp',
           name: 'Температура ощущается как',
-          value:  weather.list[0], 
+          value:  Math.floor(weather.daily[0].feels_like.day), 
           degrees: "°",
         },
         {
           icon_id: 'pressure',
           name: 'Давление',
-          value: weather.list[0],
+          value: weather.daily[0].pressure,
           degrees: "мм.рт.ст"
         },
         {
           icon_id: 'precipitation',
           name: 'Влажность',
-          value: weather.list[0],
+          value: weather.daily[0].humidity,
           degrees: "%",
         },
         {
           icon_id: 'wind',
           name: 'Ветер',
-          value: weather.list[0],
+          value: Math.floor(weather.daily[0].wind_speed),
           degrees: "м/с"
         },
       ];

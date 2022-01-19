@@ -20,28 +20,28 @@ export const Popup = ({ weather}: Props) => {
   const items = [
     {
       icon_id: 'temp',
-      name: 'Температура ощущаеться как ',
-      value: weather.list[0].feels_like,
+      name: 'Температура ощущается как',
+      value:  weather.daily[0].feels_like.day, 
+      degrees: "°",
     },
     {
       icon_id: 'pressure',
       name: 'Давление',
-      value:  weather.list[0].pressure,
+      value: weather.daily[0].pressure,
       degrees: "мм.рт.ст"
     },
     {
       icon_id: 'precipitation',
       name: 'Влажность',
-      value:  weather.list[0].humidity,
+      value: weather.daily[0].humidity,
       degrees: "%",
     },
     {
       icon_id: 'wind',
       name: 'Ветер',
-      value:  weather.list[0].speed,
+      value: '1',
       degrees: "м/с"
     },
-  
   ];
  
   
@@ -53,7 +53,7 @@ export const Popup = ({ weather}: Props) => {
     <img className={style.background_img} src={trees} alt="forest" />
       <div className={style.popup}>
         <div className={style.day}>
-          <div className={style.day_temp}>{(weather.list[0])}°</div>
+          <div className={style.day_temp}></div>
           <div className={style.day_name}>Понедельник</div>
           <div className={style.img}>
             <GlobalSvgSelector id="sun" />

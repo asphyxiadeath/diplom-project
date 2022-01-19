@@ -30,8 +30,8 @@ export const Days = ({ weather}: Props) => {
       day: "Сегодня",
       day_info: "17 янв",
       icon_id: 'sun',
-      temp_day: Math.floor(weather.main.temp),
-      temp_now: weather.main.feels_like,
+      temp_day: weather.list[0].temp.day,
+      temp_now: weather.list[0].feels_like,
       info: 'Ясно',
     },
     {

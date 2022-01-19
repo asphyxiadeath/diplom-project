@@ -7,6 +7,7 @@ import { Theme } from '../../context/ThemeContext';
 import { Link } from "react-router-dom";
 import { Weather } from '../../store/types/types';
 import { fetchCurrentWeather } from '../../store/thunks/fetchCurrentWeather';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -18,10 +19,11 @@ interface Props {weather: Weather; }
 
 export const Header = ({ weather}: Props) => {
   const theme = useTheme();
+  const dispatch= useDispatch();
   const options = [
-    { value: fetchCurrentWeather('minsk'), label: 'Минск', },
-    { value: fetchCurrentWeather('Uryupinsk'), label: 'Урюпинск', },
-    { value:  fetchCurrentWeather('Cheboksary'), label: 'Чебоксары' },
+    { value: 'minsk', label: 'Минск', },
+    { value: 'Uryupinsk', label: 'Урюпинск', },
+    { value:  'Cheboksary', label: 'Чебоксары' },
   
   ];
 
@@ -56,7 +58,10 @@ export const Header = ({ weather}: Props) => {
     },
   ]
 
-  
+  const onSelectCity=(event:any): void =>{
+    dispatch(fetchCurrentWeather(event.value));
+
+  }
   
   
   return (
@@ -81,7 +86,7 @@ export const Header = ({ weather}: Props) => {
           defaultValue={options}
           styles={colourStyles}
           options={options}
-          onChange={options} 
+          onChange={onSelectCity} 
            />
       </div>
     </header>

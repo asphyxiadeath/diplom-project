@@ -23,9 +23,7 @@ export const Home = (props: Props) => {
       
     }, []);
    
-    useEffect(() => {
-    dispatch(fetchCurrentWeather('Uryupinsk'));
-   }, []);
+   
 
     return (
         

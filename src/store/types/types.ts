@@ -1,14 +1,96 @@
 export type Weather = {
-   
-  
-    main: {
-      temp: any;
-      feels_like:any;
-      pressure: any;
-      humidity: number;
-      dt: any;
-    };
-    wind : {
-      speed: any;
+  "message": any,
+  "cnt": any,
+  'list':[{
+    'dt': any,
+    
+    
+   'pressure':number;
+    'humidity': number;
+    'temp': {
+        'day': number;
     }
+    'feels_like': {
+      'day':number;
+    }
+   
+  'speed':number; 
+  },
+  {
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },
+  {
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },{
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },{
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },{
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },{
+    'dt': any,
+    
+   'pressure':number;
+    'humidity':number;
+    'temp': {
+        'day': number;
+    }
+    'feels_like': {
+      'day':number;
+    }
+  'speed':number; 
+  },
+]  
   };
+  
+  

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+
 import { GlobalSvgSelector } from "../../assets/Images/icons/global/GlobalSvgSelector";
 import style from './Header.module.scss';
 import Select from 'react-select';
@@ -13,17 +13,18 @@ import { useDispatch } from 'react-redux';
 
 
 
-interface Props {weather: Weather; }
+interface Props {_weather: Weather; }
 
 
 
-export const Header = ({ weather}: Props) => {
+export const Header = ({_weather}: Props) => {
   const theme = useTheme();
   const dispatch= useDispatch();
   const options = [
-    { value: 'minsk', label: 'Минск', },
-    { value: '&lat=53.893009'+'&lon=27.567444', label: 'Урюпинск', },
-    { value:  'Cheboksary', label: 'Чебоксары' },
+    {value: '', label: 'Выберите город',},
+    { value: '&lat=53.893009'+'&lon=27.567444', label: 'Минск', },
+    { value: '&lat=59.9386'+'&lon=30.3141', label: 'Москва', },
+    { value:  '&lat=35.689487'+'&lon=139.691706', label: 'Tokyo' },
   
   ];
 

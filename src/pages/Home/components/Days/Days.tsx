@@ -1,11 +1,8 @@
-import React, { useState } from "react";
 
-import { Card } from './Card';
+import { _Card } from './Card';
 import style from './Days.module.scss';
 import { Tabs } from './Tabs';
 import { Weather } from '../../../../store/types/types';
-import Clock from 'react-live-clock';
-import { Value } from "sass";
 interface Props {weather: Weather; }
 
 
@@ -20,9 +17,7 @@ export interface Day {
 
 }
 
-export interface Tabs{
- 
-}
+
 
 
 export const Days = ({ weather}: Props) => {
@@ -94,7 +89,7 @@ export const Days = ({ weather}: Props) => {
       <Tabs  />
       <div className={style.days} >
         {days.map((day: Day) => (
-          <Card day={day} key={day.day} />
+          <_Card _day={day} key={day.day} />
         ))}
       </div>
 

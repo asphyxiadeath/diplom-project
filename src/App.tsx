@@ -2,10 +2,8 @@
 //unlucky routing
 import { Route, Routes} from 'react-router-dom';
 import { Home } from './pages/Home/components/Home';
-import { MonthStatistics } from './pages/MonthStatistics/Home/components/MonthStatistics';
 import { Header } from './shared/Header/Header';
 import {Popup} from './shared/Header/Popup/Popup'
-import {Weather} from './store/types/types'
 import {  useCustomSelector } from './hooks/store';
 import Snake from './shared/Header/snake'
 import { selectCurrentWeatherData } from './services/selectors';
@@ -23,7 +21,7 @@ function App() {
     
     <div className="global-container">  
     <div className="container">
-      <Header weather={weather}/>
+      <Header _weather={weather}/>
       
       <Routes>
         <Route path= "/"  element= {<Home/>}/>

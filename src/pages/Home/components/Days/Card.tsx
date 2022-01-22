@@ -1,11 +1,7 @@
-import React, { useState } from "react";
 
 import style from './Days.module.scss';
 import { GlobalSvgSelector } from '../../../../assets/Images/icons/global/GlobalSvgSelector';
 import { Day } from './Days';
-import { Item } from '../ThisDayInfo/ThisDayInfo';
-import { ThisDayItem } from '../ThisDayInfo/ThisDayItem';
-import {Popup} from '../../../../shared/Header/Popup/Popup'
 import { Link } from "react-router-dom"
 import news from '../../../../assets/Images/news.png'
 import { Tooltip } from '@varld/popover';
@@ -14,11 +10,11 @@ import { Tooltip } from '@varld/popover';
 
 
 interface Props {
-    day: Day;
+    _day: Day;
     
   }
 
- export const Card = ({ day }: Props) => {
+ export const _Card = ({ _day }: Props) => {
   const links = [
     {
         
@@ -29,7 +25,7 @@ interface Props {
       return (
       <div className={style.card} >
         <div className={style.contaiter_header}>
-          <div className={style.day}>{day.day} </div>
+          <div className={style.day}>{_day.day} </div>
               <div className={style.news}>
               {links.map((value:{href:string}) => (
                <Link className="Popup" to={value.href}> 
@@ -43,11 +39,11 @@ interface Props {
                 </div>
         
         <div className={style.img}>
-          <GlobalSvgSelector id={day.icon_id} />
+          <GlobalSvgSelector id={_day.icon_id} />
         </div>
-        <div className={style.temp_day}>{day.temp_day}</div>
-        <div className={style.temp_night}>{day.temp_night}</div>
-        <div className={style.info}>{day.info}</div>
+        <div className={style.temp_day}>{_day.temp_day}</div>
+        <div className={style.temp_night}>{_day.temp_night}</div>
+        <div className={style.info}>{_day.info}</div>
         <div className={style.blur}></div>
         </div>
       

@@ -16,116 +16,114 @@ type Response = {
 
 const initialState: CurrentWeather = {
   weather: {
-    
-  
     "daily": [
       {
         "temp": {
-          "day": -2.09,
-          "night": 1.04,
+          "day": 0,
+          "night": 0,
           
         },
         "feels_like": {
-          "day": -7.1,
-          "night": -6.31,
+          "day": 0,
+          "night": 0,
           
         },
-        "pressure": 1019,
-        "humidity": 92,
-        'wind_speed':5.67,
+        "pressure": 0,
+        "humidity": 0,
+        'wind_speed':0,
     },
     {
       
      
       "temp": {
-        "day": -0.23,
-         'night':-4.53,
+        "day": 0,
+         'night':0,
       },
       "feels_like": {
-        "day": -6.64,
-         'night':-11.53
+        "day": 0,
+         'night':0
       },
-      "pressure": 997,
-      "humidity": 91,
+      "pressure": 0,
+      "humidity": 0,
       
-      'wind_speed': 8.42,
+      'wind_speed': 0,
       
     },
   {
     "temp": {
-      "day": -0.23,
-       'night':-4.53,
+      "day": 0,
+       'night':0,
     },
     "feels_like": {
-      "day": -6.64,
-       'night':-11.53
+      "day": 0,
+       'night':0
     },
-    "pressure": 997,
-    "humidity": 91,
+    "pressure": 0,
+    "humidity": 0,
     
-    'wind_speed': 8.42,
+    'wind_speed': 0,
     
   },
   {
     "temp": {
-      "day":-6.31,
-      "night":-6.72,
+      "day":0,
+      "night":0,
     },
     "feels_like": {
-      "day":-13.31,
-      "night":-13.54,
+      "day":0,
+      "night":0,
     },
-    "pressure":1007,
-    "humidity":90,
+    "pressure":0,
+    "humidity":0,
     
-    "wind_speed":6.73,
+    "wind_speed":0,
     
   },
 
   {
     "temp": {
-      "day":-6.31,
-      "night":-6.72,
+      "day":0,
+      "night":0,
     },
     "feels_like": {
-      "day":-13.31,
-      "night":-13.54,
+      "day":0,
+      "night":0,
     },
-    "pressure":1007,
-    "humidity":90,
+    "pressure":0,
+    "humidity":0,
     
-    "wind_speed":6.73,
+    "wind_speed":0,
     
   },
 
   {
     "temp": {
-      "day":-9.28,
-      "night":-10.64,
+      "day":0,
+      "night":0,
     },
     "feels_like": {
-      "day":-15.37,
-      "night":-16.23,
+      "day":0,
+      "night":0,
     },
-    "pressure":1029,
-    "humidity":93,
+    "pressure":0,
+    "humidity":0,
     
-    "wind_speed":5.16,
+    "wind_speed":0,
     
   },
   {
     "temp": {
-      "day":-10.19,
-      "night":-10.51,
+      "day":0,
+      "night":0,
     },
     "feels_like": {
-      "day":-15.47,
-      "night":-14.19,
+      "day":0,
+      "night":0,
     },
-    "pressure":1030,
-    "humidity":93,
+    "pressure":0,
+    "humidity":0,
     
-    "wind_speed":2.78,
+    "wind_speed":0,
     
   },
 

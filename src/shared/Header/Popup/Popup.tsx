@@ -1,9 +1,4 @@
-
-import React, { useState,useCallback } from "react";
-import { render } from "react-dom";
-import Select from 'react-select';
 import { GlobalSvgSelector } from '../../../assets/Images/icons/global/GlobalSvgSelector';
-import { Item } from '../../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import { ThisDayItem } from '../../../pages/Home/components/ThisDayInfo/ThisDayItem';
 import style from './Popup.module.scss';
 import trees from './img/trees.jpg';
@@ -53,7 +48,7 @@ export const Popup = ({ weather}: Props) => {
     <img className={style.background_img} src={trees} alt="forest" />
       <div className={style.popup}>
         <div className={style.day}>
-          <div className={style.day_temp}></div>
+          <div className={style.day_temp}>{Math.floor(weather.daily[0].temp.day)}</div>
           <div className={style.day_name}>Понедельник</div>
           <div className={style.img}>
             <GlobalSvgSelector id="sun" />

@@ -4,6 +4,13 @@ import style from './Popup.module.scss';
 import trees from './img/trees.jpg';
 import { Weather } from '../../../store/types/types';
 import Clock from 'react-live-clock';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { useState } from 'react';
+import allData from 'react-calendar';
+import { WeatherService } from '../../../services/WeatherService';
+
+
 
 
 
@@ -11,14 +18,17 @@ import Clock from 'react-live-clock';
 interface Props {weather: Weather;
 }
 
+
 export const Popup = ({ weather}: Props) => {
   const items = [
     {
       icon_id: 'temp',
       name: 'Температура ощущается как',
-      value:  weather.daily[0].feels_like.day, 
+      value:  weather.daily[0].feels_like.day,
       degrees: "°",
+      
     },
+    
     {
       icon_id: 'pressure',
       name: 'Давление',
@@ -34,30 +44,36 @@ export const Popup = ({ weather}: Props) => {
     {
       icon_id: 'wind',
       name: 'Ветер',
-      value: '1',
+      value: weather.daily[0].wind_speed,
       degrees: "м/с"
     },
+    
   ];
  
   
-
+    const [date, onChangeDate] = useState(new Date());
+    const selectedData = allData.find((dataItem:any)=>
+      weather.daily[0].dt==date
+    );
+    
+  
   return (
     <>
-    
-    <div className={style.background}>
-    <img className={style.background_img} src={trees} alt="forest" />
-      <div className={style.popup}>
-        <div className={style.day}>
-          <div className={style.day_temp}>{Math.floor(weather.daily[0].temp.day)}</div>
+   
+    <div>
+    <div><Calendar onChange={onChangeDate} value={date} data={selectedData}/></div>
+   
+    </div>
+      <div className={style.popup}
+      >
+        <div className={style.day} >
+          <div className={style.day_temp}></div>
           <div className={style.day_name}>Понедельник</div>
           <div className={style.img}>
             <GlobalSvgSelector id="sun" />
           </div>
           <div className={style.day_time}>
             Время: <Clock format="HH:mm:ss" interval={1000} ticking={true}  />
-          </div>
-          <div className={style.day_city}>
-            Город: <span>Минск</span>
           </div>
         </div>
         <div className={style.this_day_info_items}>
@@ -67,11 +83,12 @@ export const Popup = ({ weather}: Props) => {
         </div>
         
       </div>
-      </div> 
+      
        </>
         );
       }
-
+    
+    
     
       
   

@@ -9,8 +9,9 @@
 }
 
 .popup {
-  position: absolute;
-  top: 300%;
+
+  margin-top: -300px;
+  margin-left: 400px;
   left: calc(50% - 325px);
   z-index: 1001;
   display: flex;
@@ -52,3 +53,6 @@
   }
 }
 
+.Calendar{
+  position: absolute;
+}

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { Weather } from '../../store/types/types';
 import { fetchCurrentWeather } from '../../store/thunks/fetchCurrentWeather';
 import { useDispatch } from 'react-redux';
-
+import React, { useState } from 'react';
 
 
 

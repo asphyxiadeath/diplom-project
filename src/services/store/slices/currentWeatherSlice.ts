@@ -28,6 +28,7 @@ const initialState: CurrentWeather = {
           "night": 0,
           
         },
+        "dt":0,
         "pressure": 0,
         "humidity": 0,
         'wind_speed':0,
@@ -43,6 +44,7 @@ const initialState: CurrentWeather = {
         "day": 0,
          'night':0
       },
+      "dt":0,
       "pressure": 0,
       "humidity": 0,
       
@@ -60,7 +62,7 @@ const initialState: CurrentWeather = {
     },
     "pressure": 0,
     "humidity": 0,
-    
+    "dt":0,
     'wind_speed': 0,
     
   },
@@ -75,7 +77,7 @@ const initialState: CurrentWeather = {
     },
     "pressure":0,
     "humidity":0,
-    
+    "dt":0,
     "wind_speed":0,
     
   },
@@ -91,7 +93,7 @@ const initialState: CurrentWeather = {
     },
     "pressure":0,
     "humidity":0,
-    
+    "dt":0,
     "wind_speed":0,
     
   },
@@ -107,7 +109,7 @@ const initialState: CurrentWeather = {
     },
     "pressure":0,
     "humidity":0,
-    
+    "dt":0,
     "wind_speed":0,
     
   },
@@ -122,7 +124,7 @@ const initialState: CurrentWeather = {
     },
     "pressure":0,
     "humidity":0,
-    
+    "dt":0,
     "wind_speed":0,
     
   },

@@ -8,6 +8,7 @@ export type Weather = {
       'day':number;
       'night':number;
     }
+    "dt":any;
     "pressure": number,
      "humidity": number,
      "wind_speed": number,
@@ -21,6 +22,7 @@ export type Weather = {
      'day':number;
      'night':number;
    }
+   "dt":any;
    "pressure": number,
     "humidity": number,
     "wind_speed": number,
@@ -35,6 +37,7 @@ export type Weather = {
    'day':number;
    'night':number;
  }
+ "dt":any;
  "pressure": number,
   "humidity": number,
   "wind_speed": number,
@@ -49,6 +52,7 @@ export type Weather = {
    'day':number;
    'night':number;
  }
+ "dt":any;
  "pressure": number,
   "humidity": number,
   "wind_speed": number,
@@ -63,6 +67,7 @@ export type Weather = {
    'day':number;
    'night':number;
  }
+ "dt":any;
  "pressure": number,
   "humidity": number,
   "wind_speed": number,
@@ -76,6 +81,7 @@ export type Weather = {
    'day':number;
    'night':number;
  }
+ "dt":any;
  "pressure": number,
   "humidity": number,
   "wind_speed": number,
@@ -90,6 +96,7 @@ export type Weather = {
    'day':number;
    'night':number;
  }
+ "dt":any;
  "pressure": number,
   "humidity": number,
   "wind_speed": number,

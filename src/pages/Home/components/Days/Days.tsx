@@ -1,7 +1,7 @@
-
+import React from 'react';
 import { _Card } from './Card';
 import style from './Days.module.scss';
-import { Tabs } from './Tabs';
+import Pagination from './Tabs';
 import { Weather } from '../../../../store/types/types';
 interface Props {weather: Weather; }
 
@@ -16,6 +16,8 @@ export interface Day {
   info: string;
 
 }
+
+interface Pagination {count:any}
 
 
 
@@ -86,7 +88,7 @@ export const Days = ({ weather}: Props) => {
 
   return (
     <>
-      <Tabs  />
+      <Pagination/>
       <div className={style.days} >
         {days.map((day: Day) => (
           <_Card _day={day} key={day.day} />

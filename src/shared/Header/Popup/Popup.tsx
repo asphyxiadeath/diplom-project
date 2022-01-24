@@ -52,8 +52,8 @@ export const Popup = ({ weather}: Props) => {
  
   
     const [date, onChangeDate] = useState(new Date());
-    const selectedData = allData.find((dataItem:any)=>
-      weather.daily[0].dt==date
+    const selectedData = weather.daily.find((dataItem:any)=>
+      weather.daily[0].dt.concat==date
     );
     
   

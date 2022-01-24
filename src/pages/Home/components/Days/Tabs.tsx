@@ -1,20 +1,13 @@
-import { Stack, Typography } from '@mui/material';
+
 import Pagination from '@mui/material/Pagination';
-import React from 'react';
-import { Link } from "react-router-dom"
-import { WeatherService } from '../../../../services/WeatherService';
-import style from './Days.module.scss';
+import React, { useState } from 'react';
+import { Value } from 'sass';
+import { Day} from './Days';
 
 
 
 
 
-
-export  default function PaginationControlled() {
-  const [page, setPage] = React.useState();
-  const handleChange = (event: React.ChangeEvent<unknown>, value: any) => {
-    setPage(value);
-  };  
 
 
 {/**export const Tabs = (props: Props) => {
@@ -33,24 +26,8 @@ export  default function PaginationControlled() {
           
           value: String,
       },
-      
     ]**/
-  
-    
-  
-  
-  
-    
-  
  
-    return (
-      
-        
-      
-      
-      <Pagination count={3} onChange={handleChange} />
-    
-  );
 
   }
     /**<div className={style.tabs}>
@@ -74,4 +51,4 @@ export  default function PaginationControlled() {
 }
 }**/
 
-}
+

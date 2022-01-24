@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { _Card } from './Card';
 import style from './Days.module.scss';
-import Pagination from './Tabs';
+import { Pagination } from "react-pagination-bar"
+import 'react-pagination-bar/dist/index.css'
 import { Weather } from '../../../../store/types/types';
 interface Props {weather: Weather; }
 
@@ -17,7 +18,7 @@ export interface Day {
 
 }
 
-interface Pagination {count:any}
+
 
 
 
@@ -83,14 +84,25 @@ export const Days = ({ weather}: Props) => {
     },
   ];
 
-
+  
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageDaysLimit = 3;
   
 
   return (
     <>
-      <Pagination/>
+     
       <div className={style.days} >
-        {days.map((day: Day) => (
+      <Pagination
+        initialPage={currentPage}
+        itemsPerPage={pageDaysLimit}
+        onPageСhange={(pageNumber) => setCurrentPage(pageNumber)}
+        totalItems={days.length}
+        pageNeighbours={2}
+      />
+        {days
+          .slice((currentPage - 1) * pageDaysLimit, currentPage * pageDaysLimit)
+          .map((day: Day) => (
           <_Card _day={day} key={day.day} />
         ))}
       </div>

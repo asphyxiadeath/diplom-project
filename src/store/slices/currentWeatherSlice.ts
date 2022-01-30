@@ -34,8 +34,6 @@ const initialState: CurrentWeather = {
         'wind_speed':0,
     },
     {
-      
-     
       "temp": {
         "day": 0,
          'night':0,
@@ -127,13 +125,8 @@ const initialState: CurrentWeather = {
     "wind_speed":0,
     
   },
-
-  
-    ]
-  
-    
-   
-  },
+]
+ },
   isLoading: false,
   response: {
     status: 0,
@@ -158,9 +151,6 @@ export const currentWeatherSlice = createSlice({
         status: action.payload.status,
         message: action.payload.statusText,
       }
-    
-   
-    
   },
     fetchCurrentWeatherError(
       state,

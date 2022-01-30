@@ -6,8 +6,6 @@ import 'react-pagination-bar/dist/index.css'
 import { Weather } from '../../../../store/types/types';
 interface Props {weather: Weather; }
 
-
-
 export interface Day {
   day: string;
   
@@ -17,11 +15,6 @@ export interface Day {
   info: string;
 
 }
-
-
-
-
-
 
 export const Days = ({ weather}: Props) => {
   

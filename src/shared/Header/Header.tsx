@@ -1,4 +1,3 @@
-
 import { GlobalSvgSelector } from "../../assets/Images/icons/global/GlobalSvgSelector";
 import style from './Header.module.scss';
 import Select from 'react-select';
@@ -8,29 +7,20 @@ import { Link } from "react-router-dom";
 import { Weather } from '../../store/types/types';
 import { fetchCurrentWeather } from '../../store/thunks/fetchCurrentWeather';
 import { useDispatch } from 'react-redux';
-import React, { useState } from 'react';
-
-
-
 
 interface Props {_weather: Weather; }
-
-
 
 export const Header = ({_weather}: Props) => {
   const theme = useTheme();
   const dispatch= useDispatch();
   const options = [
-    {value: '', label: 'Выберите город',},
     { value: '&lat=53.893009'+'&lon=27.567444', label: 'Минск', },
     { value: '&lat=59.9386'+'&lon=30.3141', label: 'Москва', },
     { value:  '&lat=35.689487'+'&lon=139.691706', label: 'Tokyo' },
   
   ];
 
-  
-  
-  const colourStyles = {
+const colourStyles = {
     control: (styles: any) => ({
       ...styles,
       backgroundColor:
@@ -53,20 +43,15 @@ export const Header = ({_weather}: Props) => {
 
   const links = [
     {
-        
-        href: "/"
-        
+        href: "/" 
     },
   ]
 
   const onSelectCity=(event:any): void =>{
-    dispatch(fetchCurrentWeather(event.value));
-    
+    dispatch(fetchCurrentWeather(event.value)); 
   }
   
-  
   return (
-    
     <header className={style.header}>
       <div className={style.wrapper}>
         <div className={style.logo}>
@@ -74,7 +59,7 @@ export const Header = ({_weather}: Props) => {
             <Link className="Home" to={value.href}>
               <GlobalSvgSelector id="header-logo" />
             </Link>
-          ))},
+          ))}
         </div>
 
         <div className={style.title}>React weather</div>

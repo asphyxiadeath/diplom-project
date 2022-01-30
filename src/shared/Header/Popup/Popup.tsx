@@ -1,23 +1,15 @@
 import { GlobalSvgSelector } from '../../../assets/Images/icons/global/GlobalSvgSelector';
 import { ThisDayItem } from '../../../pages/Home/components/ThisDayInfo/ThisDayItem';
 import style from './Popup.module.scss';
-import trees from './img/trees.jpg';
 import { Weather } from '../../../store/types/types';
 import Clock from 'react-live-clock';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { useState } from 'react';
-import allData from 'react-calendar';
-import { WeatherService } from '../../../services/WeatherService';
+import {  useState } from 'react';
+import { Progress } from 'antd';
+import 'antd/dist/antd.css'
 
-
-
-
-
-
-interface Props {weather: Weather;
-}
-
+interface Props {weather: Weather;}
 
 export const Popup = ({ weather}: Props) => {
   const items = [
@@ -50,16 +42,14 @@ export const Popup = ({ weather}: Props) => {
     
   ];
  
-  
     const [date, onChangeDate] = useState(new Date());
     const selectedData = weather.daily.find((dataItem:any)=>
-      weather.daily[0].dt.concat==date
+      (new Date(dataItem*1000)).toDateString()===date.toDateString()
     );
-    
-  
+    console.log(selectedData);
+
   return (
     <>
-   
     <div>
     <div><Calendar onChange={onChangeDate} value={date} data={selectedData}/></div>
    
@@ -81,9 +71,16 @@ export const Popup = ({ weather}: Props) => {
             <ThisDayItem key={item.icon_id} items={item} />
           ))}
         </div>
-        
-      </div>
-      
+     </div>
+     <div className={style.drop}></div>
+     <div className={style.statistic}>Статистика дипломного проекта</div>
+     <div className={style.my_progres}>
+        <div className={style.finish_days}><Progress type="circle" percent={43} format={percent => `${percent} Days`} /></div>
+        <div className={style.finish_prosent}><Progress type="circle" percent={85} format={() => 'Done'} /></div>
+     </div>
+     
+    
+    
        </>
         );
       }

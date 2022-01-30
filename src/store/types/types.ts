@@ -102,8 +102,6 @@ export type Weather = {
   "wind_speed": number,
 },
     
-    
-    
   ]
   };
   

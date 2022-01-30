@@ -10,13 +10,7 @@ interface Props {
 }
 
 
-
-
-
 export const ThisDay = ({ weather }: Props) => {
- 
- 
-
  
     return (
     <div className={style.this_day}>
@@ -33,6 +27,6 @@ export const ThisDay = ({ weather }: Props) => {
       </div>
     </div>
     );   
-    };
+   };
 
   

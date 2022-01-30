@@ -56,3 +56,69 @@
 .Calendar{
   position: absolute;
 }
+
+.drop{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background: #54abfb;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  opacity: 0.8;
+  border: 2px solid #3d93ff;
+  left: -100px;
+  top: -50px;
+}
+
+.drop::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #318cfe;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  box-shadow: -20px 30px 16px #1b6cfb,
+              -40px  60px 32px #1b6cfb,
+              inset -6px 6px 10px #1b6cfb,
+              inset 2px 6px 10px #1a74e5,
+              inset 20px -20px 22px white,
+              inset 40px -40px 44px #a8ceff; 
+}
+
+.drop::after{
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #e6fdfb;
+  border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+  left: 130px;
+  top: 40px;
+  box-shadow: 16px 40px 0 -10px white;
+  opacity: 0.8;
+}
+
+.statistic{
+  font-size: 25px;
+  line-height: 30px;
+  color: var(#{--text-color-default});
+  text-align: center;
+}
+
+.my_progres{
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-evenly;
+  background: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  margin-bottom: -50px;
+  
+}
+  .finish_days{
+    margin-top: 50px;
+  }
+
+  .finish_prosent{
+    margin-top: 50px;
+  }
